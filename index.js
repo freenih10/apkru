@@ -3,7 +3,8 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 
 const app = express();
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => res.json({ message: "Hello World!" }));
+app.get("/apkru", async (req, res) => {
   try {
     const response = await axios.get("https://androeed.store/");
     const $ = cheerio.load(response.data);
