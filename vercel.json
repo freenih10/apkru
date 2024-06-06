@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "my-node-app",
   "builds": [
     {
       "src": "index.js",
@@ -8,11 +9,7 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/apkru",
+      "src": "/(.*)",
       "dest": "/index.js"
     }
   ]
