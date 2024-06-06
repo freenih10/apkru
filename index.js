@@ -20,6 +20,7 @@ app.get("/apkru", async (req, res) => {
 
       const date = dopy.find(".date").text();
       const title = $(element).find(".title").text();
+      const img = $(element).find("img").attr("src");
       const hrefAttr = $(element).parent().attr("href");
       const url = hrefAttr ? `https://androeed.store${hrefAttr}` : null;
 
@@ -39,7 +40,7 @@ app.get("/apkru", async (req, res) => {
             downloads.push({
               title: downloadTitle,
               size: downloadSize,
-              href: downloadHref,
+              url: downloadHref,
             });
           }
         });
@@ -52,6 +53,7 @@ app.get("/apkru", async (req, res) => {
             version: versionText, // Menyimpan teks versi lengkap
             date,
             url,
+            img,
             download: downloads,
           });
         }
